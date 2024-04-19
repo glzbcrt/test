@@ -15,7 +15,7 @@ function Download-BicepFiles {
             New-Item -ItemType Directory -Path $path -ErrorAction Ignore
         }
 
-        iwr "$BaseUrl/$File" -Outfile $File
+        iwr "$BaseUrl/$File" -Outfile "tmp/$File"
     }
 }
 
@@ -41,4 +41,4 @@ Write-Host -ForegroundColor Yellow "East US"
 
 Download-BicepFiles `
     -BaseUrl "https://raw.githubusercontent.com/izzymsft/WhatTheHack/xxx-AIAppsFluencyHack/068-AzureOpenAIApps/infra" `
-    -Files @("tmp/main.bicep", "tmp/modules/cosmos.bicep", "tmp/modules/document.bicep", "tmp/modules/openai.bicep", "tmp/modules/redis.bicep", "tmp/modules/search.bicep", "tmp/modules/servicebus.bicep", "tmp/modules/storage.bicep")
+    -Files @("main.bicep", "modules/cosmos.bicep", "modules/document.bicep", "modules/openai.bicep", "modules/redis.bicep", "modules/search.bicep", "modules/servicebus.bicep", "modules/storage.bicep")
