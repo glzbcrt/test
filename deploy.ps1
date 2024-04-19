@@ -30,7 +30,10 @@ if ($env:AZD_IN_CLOUDSHELL -ne "1") {
 $context = Get-AzContext
 
 Write-Host "The resources will be provisioned in the following subscription:"
-Write-Host "`tSubscriptionId: {$context.Subscription.Id}"
+Write-Host "`t-       TenantId: $context.Tenant.Id"
+Write-Host "`t- SubscriptionId: $context.Subscription.Id"
+Write-Host "`t- Resource Group: wth_azureopenai_apps"
+Write-Host "`t-         Region: East US"
 
 Download-BicepFiles `
     -BaseUrl "https://raw.githubusercontent.com/izzymsft/WhatTheHack/xxx-AIAppsFluencyHack/068-AzureOpenAIApps/infra" `
