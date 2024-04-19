@@ -42,7 +42,7 @@ Write-Host -ForegroundColor Yellow "East US"
 Write-Host -ForegroundColor Red "`nIf the subscription is incorrect, abort this script, point Azure Cloud Shell "
 Write-Host -ForegroundColor Red "to the correct one using Set-AzContext -Subscription <id>, and try again.`n"
 
-$r = Read-Host "Press Y to proceed to deploy the resouces using this parameters: "
+$r = Read-Host "Press Y to proceed to deploy the resouces using this parameters"
 
 if ($r -ne "Y") {
     Write-Host -ForegroundColor Red "Aborting deployment script."
