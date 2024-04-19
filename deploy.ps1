@@ -39,6 +39,16 @@ Write-Host -ForegroundColor Yellow "wth_azureopenai_apps"
 Write-Host -NoNewline "`t-         Region: "
 Write-Host -ForegroundColor Yellow "East US"
 
+Write-Host "`n"
+Write-Host "If not, abort this script and point Azure Cloud Shell to the correct subscription using Set-AzContext -Subscription <id>."
+
+$r = Read-Host "Press Y to proceed to deploy the resouces using this parameters."
+
+if ($r -ne "Y") {
+    Write-Host -ForegroundColor Red "Aborting deployment script."
+    return
+}
+
 Download-BicepFiles `
     -BaseUrl "https://raw.githubusercontent.com/izzymsft/WhatTheHack/xxx-AIAppsFluencyHack/068-AzureOpenAIApps/infra" `
     -Files @("main.bicep", "modules/cosmos.bicep", "modules/document.bicep", "modules/openai.bicep", "modules/redis.bicep", "modules/search.bicep", "modules/servicebus.bicep", "modules/storage.bicep")
