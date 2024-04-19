@@ -19,7 +19,7 @@ function Download-BicepFiles {
     }
 }
 
-Write-Host "`tWHAT THE HACK - AZURE OPENAI APPS" -ForegroundColor Green
+Write-Host "`n`tWHAT THE HACK - AZURE OPENAI APPS" -ForegroundColor Green
 Write-Host "created with love by the Americas GPS Tech Team!`n"
 
 if ($env:AZD_IN_CLOUDSHELL -ne "1") {
@@ -30,7 +30,8 @@ if ($env:AZD_IN_CLOUDSHELL -ne "1") {
 $context = Get-AzContext
 
 Write-Host "The resources will be provisioned in the following subscription:"
-Write-Host "`t-       TenantId: $context.Tenant.Id"
+Write-Host -NoNewline "`t-       TenantId: " 
+Write-Host -ForegroundColor Yellow $context.Tenant.Id
 Write-Host "`t- SubscriptionId: $context.Subscription.Id"
 Write-Host "`t- Resource Group: wth_azureopenai_apps"
 Write-Host "`t-         Region: East US"
