@@ -30,17 +30,16 @@ if ($env:AZD_IN_CLOUDSHELL -ne "1") {
 $context = Get-AzContext
 
 Write-Host "The resources will be provisioned using the following parameters:"
-Write-Host -NoNewline "`t-       TenantId: " 
+Write-Host -NoNewline "`t       TenantId: " 
 Write-Host -ForegroundColor Yellow $context.Tenant.Id
-Write-Host -NoNewline "`t- SubscriptionId: "
+Write-Host -NoNewline "`t SubscriptionId: "
 Write-Host -ForegroundColor Yellow $context.Subscription.Id
-Write-Host -NoNewline "`t- Resource Group: "
+Write-Host -NoNewline "`t Resource Group: "
 Write-Host -ForegroundColor Yellow "wth_azureopenai_apps"
-Write-Host -NoNewline "`t-         Region: "
+Write-Host -NoNewline "`t         Region: "
 Write-Host -ForegroundColor Yellow "East US"
-
-Write-Host "`n"
-Write-Host "If not, abort this script and point Azure Cloud Shell to the correct subscription using Set-AzContext -Subscription <id>."
+Write-Host -ForegroundColor Red "`nIf the subscription is incorrect, abort this script, point Azure Cloud Shell "
+Write-Host -ForegroundColor Red "to the correct subscription using Set-AzContext -Subscription <id>, and try again.`n"
 
 $r = Read-Host "Press Y to proceed to deploy the resouces using this parameters."
 
