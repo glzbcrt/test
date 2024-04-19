@@ -19,7 +19,7 @@ function Download-BicepFiles {
     }
 }
 
-Write-Host -Text "      WHAT THE HACK - AZURE OPENAI APPS" -ForegroundColor Green -LinesBefore 1 -LinesAfter 1
+Write-Host "`tWHAT THE HACK - AZURE OPENAI APPS" -ForegroundColor Green
 Write-Host "created with love by the Americas GPS Tech Team!`n"
 
 if ($env:AZD_IN_CLOUDSHELL -ne "1") {
