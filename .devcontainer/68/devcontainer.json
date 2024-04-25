@@ -1,7 +1,7 @@
 {
     "name": "68 - Azure OpenAI Apps",
     "image": "mcr.microsoft.com/devcontainers/python:3.11",
-    
+    "onCreateCommand": "npm install -g @angular/cli azure-functions-core-tools@4",
     "features": {
         "ghcr.io/devcontainers/features/azure-cli:1": {
             "installBicep": true
