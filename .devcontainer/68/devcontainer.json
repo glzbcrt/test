@@ -9,10 +9,12 @@
         "ghcr.io/devcontainers/features/node:1": {},
         "ghcr.io/devcontainers/features/powershell:1": {
             "modules": "az"
-        }        
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     "hostRequirements": {
         "cpus": 4
     },
+    "forwardPorts": [5656],    
     "portsAttributes": {"5656": {"label": "Main app"}}
 }
